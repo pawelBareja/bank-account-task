@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+# Bank App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application for managing bank accounts, allowing for the creation, editing, searching, and deletion of accounts, as well as fund transfers between accounts.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Developed with React and TypeScript
+- Minimal setup using Vite with HMR (Hot Module Replacement)
+- ESLint setup with recommended rules for type-aware linting
+- Backend mock setup
 
-## Expanding the ESLint configuration
+### Instalation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+First, install the necessary dependencies by running:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Development
+
+To start the development server, run:
+
+`npm run dev`
+
+### Testing
+
+To run unit tests, run:
+
+`npm test`

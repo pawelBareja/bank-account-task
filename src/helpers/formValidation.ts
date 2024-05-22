@@ -6,6 +6,7 @@ const ERROR_MESSAGES = {
   maxString: (max: number) => `Max. numberof characters is ${max}`,
   whiteSpace: 'Remove blank spaces',
   sentence_alike: 'Remove blank spaces',
+  transferFundLimit: 'Transfer amount exceeds available funds',
 };
 
 const WHITESPACE_PATTERN = /^\S*$/;
@@ -32,3 +33,12 @@ export const sentenceAlikeValidation = (min = 2, max = 30) =>
     .max(max, ERROR_MESSAGES.maxString(max))
     .required(ERROR_MESSAGES.required)
     .matches(SENTENCE_ALIKE_REGEX, ERROR_MESSAGES.sentence_alike);
+
+export const transferFundsValidation = (fundsLimit = 0) =>
+  Yup.number()
+    .required(ERROR_MESSAGES.required)
+    .test(
+      'maxAmount',
+      ERROR_MESSAGES.transferFundLimit,
+      (value) => value !== undefined && value !== null && value <= fundsLimit
+    );

@@ -15,7 +15,7 @@ const MainLayout = () => {
         height={'100%'}
         px={4}
         py={isMobileView ? 2 : 4}
-        sx={{ alignItems: 'stretch' }} // how to mak this container grow verticallyy to fill all space?
+        sx={{ alignItems: 'stretch' }}
       >
         <Outlet />
       </Grid>

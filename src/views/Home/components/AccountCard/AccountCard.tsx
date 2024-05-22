@@ -2,15 +2,12 @@ import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import {
-  Grid,
   ListItemIcon,
   Menu,
   MenuItem,
   Tooltip,
-  Typography,
   Avatar,
   IconButton,
-  CardContent,
 } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Delete, Settings } from '@mui/icons-material';
@@ -23,6 +20,7 @@ import {
 } from '../../../../api/useAccounts';
 import DeleteDialog from './DeleteDialog';
 import stringToColor from 'string-to-color';
+import AccountInfo from './components/AccountInfo';
 
 export function AccountCard({ account }: { account: IAccount }) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -30,14 +28,7 @@ export function AccountCard({ account }: { account: IAccount }) {
   const { data: accounts } = useGetAccounts();
   const { mutate: deleteAccount } = useDeleteAccount();
 
-  const {
-    accountNumber,
-    accountName,
-    accountCurrency,
-    accountFunds,
-    ownerId,
-    id,
-  } = account;
+  const { accountNumber, accountCurrency, ownerId, id } = account;
 
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -153,41 +144,7 @@ export function AccountCard({ account }: { account: IAccount }) {
             </>
           }
         />
-        <CardContent>
-          <Grid container wrap="nowrap" direction={{ xs: 'column', md: 'row' }}>
-            <Grid container direction="column" md={6}>
-              <Typography variant="body2" color="primary">
-                Name of the account
-              </Typography>
-              <Typography variant="h5" color="text.secondary">
-                {accountName}
-              </Typography>
-
-              <Typography variant="body2" color="primary" marginTop={2}>
-                Account number
-              </Typography>
-              <Typography variant="h5" color="text.secondary">
-                {accountNumber}
-              </Typography>
-            </Grid>
-            <Grid
-              container
-              direction={{ xs: 'column', sm: 'row' }}
-              justifyContent={{ xs: 'flex-start', sm: 'flex-end' }}
-              alignContent={{ xs: 'flex-start', sm: 'flex-end' }}
-              alignItems="baseline"
-              md={6}
-              mt={{ xs: 2, sm: 0 }}
-            >
-              <Typography variant="body2" color="primary" mr={1}>
-                Funds:
-              </Typography>
-              <Typography variant="h5" color="text.secondary">
-                {accountFunds} {accountCurrency}
-              </Typography>
-            </Grid>
-          </Grid>
-        </CardContent>
+        <AccountInfo account={account} />
       </Card>
 
       <DeleteDialog

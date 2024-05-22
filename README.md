@@ -7,7 +7,7 @@ This project is a web application for managing bank accounts, allowing for the c
 - Developed with React and TypeScript
 - Minimal setup using Vite with HMR (Hot Module Replacement)
 - ESLint setup with recommended rules for type-aware linting
-- Backend mock setup
+- Backend mock setup (JSON Server)
 
 ### Instalation
 

@@ -26,7 +26,6 @@ export const useGetAccounts = (): UseQueryResult<IAccount[]> => {
 export const useGetSingleAccount = (
   id: string | null
 ): UseQueryResult<IAccount> => {
-  console.log(id, typeof id);
   return useQuery<IAccount, Error>({
     queryKey: ['fetchSingleAccount', id],
     queryFn: () => ajaxService('get', `${API_PATHS.accounts}/${id}`),

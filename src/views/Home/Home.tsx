@@ -39,14 +39,14 @@ const Home = () => {
   return (
     <Grid container>
       <Grid item xs={12} md={6} mb={4}>
-        <Typography variant="h5">Your available accounts</Typography>
+        <Typography variant="h5">Accounts</Typography>
       </Grid>
       <HomeMenu
         searched={searched}
         setSearched={setSearched}
         cancelSearch={cancelSearch}
       />
-      <Grid item xs={12} md={6} mb={4}></Grid>
+
       <Grid item xs={12}>
         <Stack spacing={2} sx={{ width: '100%' }}>
           {filteredAccounts?.map((account) => {

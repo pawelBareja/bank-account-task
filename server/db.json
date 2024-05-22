@@ -2,10 +2,10 @@
   "accounts": [
     {
       "id": "17163178205319450000",
-      "accountName": "base",
+      "accountName": "baseb",
       "accountNumber": 17163178205311777000,
       "accountCurrency": "EUR",
-      "accountFunds": 1240,
+      "accountFunds": 1000,
       "ownerId": 1
     }
   ],
